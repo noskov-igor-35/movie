@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Welcome, Clock, Toggle, LoginControl, Mailbox, Page } from './lessons';
 
-function App(): JSX.Element {
+const messages = ['React', 'Re: React', 'Re:Re: React'];
+
+export default function App(): JSX.Element {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <span>Lesson 1</span>
+        <Welcome name="Алиса" />
+        <Welcome name="Базилио" />
+        <Welcome name="Буратино" />
+      </div>
+      <div>
+        <span>Lesson 2</span>
+        <Clock/>
+        <Clock/>
+      </div>
+      <div>
+        <span>Lesson 3</span>
+        <Toggle/>
+      </div>
+      <div>
+        <span>Lesson 4</span>
+        <LoginControl/>
+        <Mailbox unreadMessages={ messages } />
+        <Page/>
+      </div>
     </div>
   );
 }
-
-export default App;
