@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'primereact/button';
 
 interface State {
   isToggleOn: boolean
@@ -14,9 +15,9 @@ export default class Toggle extends React.Component<unknown, State> {
   }
 
   render(): React.ReactNode {
-    return <button onClick={this.handleClick}>
-      { this.state.isToggleOn ? 'Включено' : 'Выключено' }
-    </button>;
+    return <Button label={ this.state.isToggleOn ? 'Включено' : 'Выключено' }
+                   size='small'
+                   onClick={this.handleClick}/>;
   }
 
   private handleClick(): void {

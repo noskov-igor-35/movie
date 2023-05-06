@@ -1,4 +1,5 @@
 import React from 'react';
+import { Accordion, AccordionTab } from 'primereact/accordion';
 import Welcome from './lesson 1';
 import Clock from './lesson 2';
 import Toggle from './lesson 3';
@@ -8,28 +9,24 @@ const messages = ['React', 'Re: React', 'Re:Re: React'];
 
 export default function Lessons(): JSX.Element {
   return (
-    <div>
-      <div>
-        <span>Lesson 1</span>
-        <Welcome name="Алиса" />
-        <Welcome name="Базилио" />
-        <Welcome name="Буратино" />
-      </div>
-      <div>
-        <span>Lesson 2</span>
+    <Accordion activeIndex={0}>
+      <AccordionTab header='Lesson 1'>
+        <Welcome name='Алиса' />
+        <Welcome name='Базилио' />
+        <Welcome name='Буратино' />
+      </AccordionTab>
+      <AccordionTab header='Lesson 2'>
         <Clock/>
         <Clock/>
-      </div>
-      <div>
-        <span>Lesson 3</span>
+      </AccordionTab>
+      <AccordionTab header='Lesson 3'>
         <Toggle/>
-      </div>
-      <div>
-        <span>Lesson 4</span>
+      </AccordionTab>
+      <AccordionTab header='Lesson 4'>
         <LoginControl/>
         <Mailbox unreadMessages={ messages } />
         <Page/>
-      </div>
-    </div>
+      </AccordionTab>
+    </Accordion>
   );
 }
